@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import "./Navbar.css"
 import { menuIcon, closeIcon, logoImage} from '../../assets'
-import logoImage from 'src\assets\HeartGuardian.png'; // Importing the logo image
 
 function Navbar() {
 
