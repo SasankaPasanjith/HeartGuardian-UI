@@ -1,7 +1,7 @@
 import bgElement1 from "./bg-element-1.svg"
 import bgElement2 from "./bg-element-2.svg"
 import doctorIcon from "./doctor-icon.svg"
-import patienIcon from "./patient-icon.svg"
+import patientIcon from "./patient-icon.svg"
 import facebookLogo from "./facebook-logo.svg";
 import instagramLogo from "./instagram-logo.svg";
 import twitterLogo from "./twitter-logo.svg";
@@ -25,7 +25,7 @@ export {
     bgElement1,
     bgElement2,
     doctorIcon,
-    patienIcon,
+    patientIcon,
     facebookLogo,
     instagramLogo, 
     twitterLogo,

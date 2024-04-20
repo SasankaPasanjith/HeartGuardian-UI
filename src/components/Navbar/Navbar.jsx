@@ -9,10 +9,7 @@ function Navbar() {
   return (
     <>
       <nav>
-         {/* Adding the logo image */}
-         <a href='#' className='logo'>
-          <img src={logoImage} alt='HeartGuardian Logo' />
-          Heart<span className='red'>Guardian</span></a>
+        <a href='#' className='logo'> Heart<span className='red'>Guardian</span></a>
         <ul>
           <li>
             <a href='#topics'>Disease Details</a>
