@@ -10,7 +10,7 @@ function Header() {
         <div className='cta'>
           <p className='course-name'>Heart Disease Predictor</p>
           <h1>Protecting Your Heart is our Main Duty</h1>
-          <a href='#' className='demo-btn'>
+          <a href='src\components\Prediction\Prediction.jsx' className='demo-btn'>
             Predict Here
           </a>
         </div>

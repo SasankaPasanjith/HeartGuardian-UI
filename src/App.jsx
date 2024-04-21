@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header,Info, Topics, Blog, Testimonials, Footer } from './components'
+import { Header,Info, Topics, Blog, Testimonials, Footer, Prediction } from './components'
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
      <Blog/>
      <Testimonials/>
      <Footer/>
+     <Prediction/>
     </>
     
   )
