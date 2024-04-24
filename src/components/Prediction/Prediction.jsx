@@ -26,23 +26,14 @@ function Prediction() {
           try {
             const response = await axios.post("http://127.0.0.1:5000/predict", formData);
             const prediction = response.data.prediction;
-            if (prediction === 0) {
+            if (prediction[0] === 0) {
               setPredictionResult("You don't have a risk of heart disease.");
-            } else { // Handle any other prediction value (including 1)
+            }else if (prediction[0] === 1) {
               setPredictionResult('You have a high risk of heart disease.');
-            }
+          } else {
+              setPredictionResult('Unable to make a prediction.');
+          }
             setErrorMessage('');
-          /*try {
-              const response = await axios.post("http://127.0.0.1:5000/predict", formData);
-              const prediction = response.data.prediction;
-              if (prediction === 0) {
-                  setPredictionResult("You don't have a risk of heart disease.");
-              } else if (prediction === 1) {
-                  setPredictionResult('You have a high risk of heart disease.');
-              } else {
-                  setPredictionResult('Unable to make a prediction.');
-              }
-              setErrorMessage('');*/
           } catch (error) {
               console.error('Prediction failed:', error);
               setErrorMessage('Failed to connect to the prediction server.');
