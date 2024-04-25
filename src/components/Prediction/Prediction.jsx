@@ -79,7 +79,9 @@ function Prediction() {
     <label htmlFor="thalach">Maximum Heart Rate Achieved (Between 71 - 202):</label>
     <input type="number" id="thalach" name="thalach" value={formData.thalach} onChange={handleChange} min="71" max="202" required />
 
+    <div className="form-button-container">
     <button type="submit">Predict</button>
+    </div>
   </form>
 
 {errorMessage && <p className="error-message">{errorMessage}</p>}
