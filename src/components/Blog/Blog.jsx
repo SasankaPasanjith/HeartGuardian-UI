@@ -10,33 +10,33 @@ function Blog() {
           <div className='content-container'>
               <div className='post'>
                 <div className='tag'>PREDICTION</div>
-                <a href='#'>
+                <a href='https://www.mayoclinic.org/diseases-conditions/heart-disease/diagnosis-treatment/drc-20353124'>
                    <img src={blog1} alt="" />
                 </a>
 
-                <a href='#'>
+                <a href='https://www.mayoclinic.org/diseases-conditions/heart-disease/diagnosis-treatment/drc-20353124'>
                    <h3 className='post-title'>How to Use Heart Disease Prediction System</h3>
                 </a>
               </div>
 
               <div className='post'>
                 <div className='tag'>PREVENT</div>
-                <a href='#'>
+                <a href='https://www.nhs.uk/conditions/coronary-heart-disease/prevention/'>
                    <img src={blog2} alt="" />
                 </a>
 
-                <a href='#'>
+                <a href='https://www.nhs.uk/conditions/coronary-heart-disease/prevention/'>
                    <h3 className='post-title'>How to Prevent from Heart Diseases</h3>
                 </a>
               </div>
 
               <div className='post'>
                 <div className='tag'>EARLY DETECTION</div>
-                <a href='#'>
+                <a href='https://www.medtechviews.eu/articles/early-diagnosis-cardiovascular-disease/'>
                    <img src={blog3} alt="" />
                 </a>
 
-                <a href='#'>
+                <a href='https://www.medtechviews.eu/articles/early-diagnosis-cardiovascular-disease/'>
                    <h3 className='post-title'>Why Early Detection is Important for Healthy Life?</h3>
                 </a>
               </div>
