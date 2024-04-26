@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header,Info, Topics, Blog, Testimonials, Footer, Prediction } from './components'
+import { Header,Info, Topics, Blog , Prediction, Testimonials, Footer} from './components'
 
 function App() {
   return (
@@ -8,9 +8,9 @@ function App() {
      <Topics/>
      <Info/>
      <Blog/>
+     <Prediction/>
      <Testimonials/>
      <Footer/>
-     <Prediction/>
     </>
     
   )
