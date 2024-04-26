@@ -8,4 +8,4 @@ import Footer from "./Footer/Footer";
 
 
 
-export { Header, Topics, Info, Blog, Prediction,Testimonials, Footer};
+export { Header, Topics, Info, Blog, Prediction, Testimonials, Footer};

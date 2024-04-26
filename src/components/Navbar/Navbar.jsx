@@ -24,6 +24,10 @@ function Navbar() {
           </li>
 
           <li>
+            <a href='#prediction'>Prediction</a>
+          </li>
+
+          <li>
             <a href='#testimonials'>Testimonials</a>
           </li>
         </ul>
@@ -46,6 +50,9 @@ function Navbar() {
           </li>
           <li>
             <a href='#blog' onClick={() => setIsActive(false)}>Blog</a>
+          </li>
+          <li>
+            <a href='#prediction' onClick={() => setIsActive(false)}>Prediction</a>
           </li>
           <li>
             <a href='#testimonials' onClick={() => setIsActive(false)}>Testimonials</a>
