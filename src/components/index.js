@@ -2,8 +2,8 @@ import Header from "./Header/Header";
 import Topics from "./Topics/Topics";
 import Info from "./Info/Info";
 import Blog from "./Blog/Blog";
-import Prediction from './Prediction/Prediction'
-import Testimonials from './Testimonials/Testimonials'
+import Prediction from "./Prediction/Prediction";
+import Testimonials from "./Testimonials/Testimonials";
 import Footer from "./Footer/Footer";
 
 

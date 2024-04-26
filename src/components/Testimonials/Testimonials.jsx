@@ -6,7 +6,7 @@ function Testimonials() {
   return (
     <section id="testimonials" className='dark-gray'>
       <div className='wrapper'>
-        <h2>What is our student Say?</h2>
+        <h2>What is our patients Say?</h2>
       </div>
 
       <div className='content-container'>

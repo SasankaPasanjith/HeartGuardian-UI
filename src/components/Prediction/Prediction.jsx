@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import './Prediction.css'
+import "./Prediction.css"
 
 function Prediction() {
     const [formData, setFormData] = useState({
