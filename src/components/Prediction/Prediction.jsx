@@ -11,33 +11,33 @@ function Prediction() {
         chol: '',
         fbs: '',
         thalach: ''
-      });
+      })
 
-      const [predictionResult, setPredictionResult] = useState('');
-      const [errorMessage, setErrorMessage] = useState('');
+      const [predictionResult, setPredictionResult] = useState('')
+      const [errorMessage, setErrorMessage] = useState('')
   
       const handleChange = (e) => {
           const { name, value } = e.target;
-          setFormData({ ...formData, [name]: value });
+          setFormData({ ...formData, [name]: value })
       };
   
       const handleSubmit = async (e) => {
-          e.preventDefault();
+          e.preventDefault()
           try {
-            const response = await axios.post("http://127.0.0.1:5000/predict", formData);
+            const response = await axios.post("http://127.0.0.1:5000/predict", formData)
             const prediction = response.data.prediction;
             if (prediction[0] === 0) {
-              setPredictionResult("You don't have a risk of heart disease.");
+              setPredictionResult("You don't have a risk of heart disease.")
             }else if (prediction[0] === 1) {
-              setPredictionResult('You have a high risk of heart disease.');
+              setPredictionResult('You have a high risk of heart disease.')
           } else {
-              setPredictionResult('Unable to make a prediction.');
+              setPredictionResult('Unable to make a prediction.')
           }
-            setErrorMessage('');
+            setErrorMessage('')
           } catch (error) {
-              console.error('Prediction failed:', error);
-              setErrorMessage('Failed to connect to the prediction server.');
-              setPredictionResult('');
+              console.error('Prediction failed:', error)
+              setErrorMessage('Failed to connect to the prediction server.')
+              setPredictionResult('')
           }
       }
 
@@ -87,7 +87,7 @@ function Prediction() {
 {errorMessage && <p className="error-message">{errorMessage}</p>}
 {predictionResult && <p className="result">{predictionResult}</p>}
 </div>
-);
+)
 }
 
 export default Prediction
