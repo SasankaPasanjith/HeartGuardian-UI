@@ -3,6 +3,12 @@ import './Header.css'
 import Navbar from "../Navbar/Navbar"
 
 function Header() {
+  const smoothScroll = (targetId) => {
+    document.getElementById(targetId).scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <header>
       <div className='wrapper'>
@@ -10,9 +16,9 @@ function Header() {
         <div className='cta'>
           <p className='course-name'>Heart Disease Predictor</p>
           <h1>Protecting Your Heart is our Main Duty</h1>
-          <a href='src\components\Prediction\Prediction.jsx' className='demo-btn'>
+          <button onClick={() => smoothScroll('prediction')} className='demo-btn'>
             Predict Here
-          </a>
+          </button>
         </div>
       </div>
     </header>

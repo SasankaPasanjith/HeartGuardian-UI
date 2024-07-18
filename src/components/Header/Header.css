@@ -64,7 +64,7 @@ header .cta .course-name::after {
     background: var(--red-color) ;
     color:#ffffff;
     padding: 10px 32px;
-    font-weight: 800;
+    font-weight: 750;
     font-size: 16px;
   }
 
