@@ -43,6 +43,7 @@ function Prediction() {
 
   return (
     <div>
+      <section id="prediction" className='dark-gray'>
     <form onSubmit={handleSubmit}>
     <label htmlFor="age">Age:</label>
     <input type="number" id="age" name="age" value={formData.age} onChange={handleChange} required />
@@ -86,6 +87,7 @@ function Prediction() {
 
 {errorMessage && <p className="error-message">{errorMessage}</p>}
 {predictionResult && <p className="result">{predictionResult}</p>}
+</section>
 </div>
 )
 }
