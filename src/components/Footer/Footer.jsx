@@ -33,7 +33,7 @@ function Footer() {
           <div className='links'>
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#">Blog</a></li>
+              <li><a href='#blog'>Blog</a></li>
               <li><a href="#">Privacy Policy</a></li>
             </ul>
           </div>
@@ -41,10 +41,10 @@ function Footer() {
             <h3>Contact Us</h3>
             <ul>
               <li>
-                <a href="#">sasankapasanjith@email.com</a>
+                <a href="mailto:sasankapasanjith55@gmail.com">sasankapasanjith55@gmail.com</a>
               </li>
               <li>
-                <a href="#">0770754842</a>
+                <a href="tel:+94770754842">0770754842</a>
               </li>
             </ul>
           </div>
