@@ -30,6 +30,10 @@ function Navbar() {
           <li>
             <a href='#testimonials'>Testimonials</a>
           </li>
+
+          <li>
+            <a href='/login'>Login</a>
+          </li>
         </ul>
 
         <div onClick={() => setIsActive(true)} className='menu-icon'>
@@ -57,10 +61,13 @@ function Navbar() {
           <li>
             <a href='#testimonials' onClick={() => setIsActive(false)}>Testimonials</a>
           </li>
+          <li>
+            <a href='/login' onClick={() => setIsActive(false)}>Login</a>
+          </li>
         </ul>
       </div>
     </>
-  )
+  );
 }
 
 export default Navbar
