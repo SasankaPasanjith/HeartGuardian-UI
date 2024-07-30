@@ -36,14 +36,14 @@ function Navbar() {
           </li>
         </ul>
 
-        <div onClick={() => setIsActive(true)} className='menu-icon'>
-          <img src={menuIcon} alt='' />
+        <div onClick={() => setIsActive(true)} className='menu-icon' aria-label="Open menu">
+          <img src={menuIcon} alt='Menu Icon' />
         </div>
       </nav>
 
       <div className={`mobile-menu-container ${isActive ? "active" : ""}`} >
-        <div onClick={() => setIsActive(false)} className='close-icon'>
-          <img src={closeIcon} alt='' />
+        <div onClick={() => setIsActive(false)} className='close-icon' aria-label="Close menu">
+          <img src={closeIcon} alt='Close Icon' />
         </div>
         <ul className='menu-items'>
           <li>
