@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 import Navbar from "../Navbar/Navbar"
 
-function Header() {
+function Header({ id }) {
   const smoothScroll = (targetId) => {
     document.getElementById(targetId).scrollIntoView({
       behavior: 'smooth'
@@ -10,7 +10,7 @@ function Header() {
   };
 
   return (
-    <header>
+    <header id = {id}>
       <div className='wrapper'>
         <Navbar />
         <div className='cta'>

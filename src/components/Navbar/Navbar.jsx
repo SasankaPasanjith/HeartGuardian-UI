@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
 import { menuIcon, closeIcon, logoImage} from '../../assets'
 
@@ -6,38 +7,40 @@ function Navbar() {
 
   const [isActive, setIsActive] = useState(false);
 
+  const handleNavLinkClick = (e, targetId) => {
+    e.preventDefault();
+    document.getElementById(targetId).scrollIntoView({
+      behavior: 'smooth',
+    });
+    setIsActive(false);
+  };
+
   return (
     <>
       <nav>
-        <a href='#' className='logo'> Heart<span className='red'>Guardian</span></a>
+        <a href="/" className="logo"> Heart<span className="red">Guardian</span></a>
         <ul>
           <li>
-            <a href='#topics'>Disease Details</a>
+            <a href="#topics" onClick={(e) => handleNavLinkClick(e, 'topics')}>Disease Details</a>
           </li>
-
           <li>
-            <a href='#info'>About Us</a>
+            <a href="#info" onClick={(e) => handleNavLinkClick(e, 'info')}>About Us</a>
           </li>
-
           <li>
-            <a href='#blog'>Blog</a>
+            <a href="#blog" onClick={(e) => handleNavLinkClick(e, 'blog')}>Blog</a>
           </li>
-
           <li>
-            <a href='#prediction'>Prediction</a>
+            <a href="#prediction" onClick={(e) => handleNavLinkClick(e, 'prediction')}>Prediction</a>
           </li>
-
           <li>
-            <a href='#testimonials'>Testimonials</a>
+            <a href="#testimonials" onClick={(e) => handleNavLinkClick(e, 'testimonials')}>Testimonials</a>
           </li>
-
           <li>
-            <a href='/login'>Login</a>
+            <NavLink to="/login">Login</NavLink>
           </li>
         </ul>
-
-        <div onClick={() => setIsActive(true)} className='menu-icon' aria-label="Open menu">
-          <img src={menuIcon} alt='Menu Icon' />
+        <div onClick={() => setIsActive(true)} className="menu-icon" aria-label="Open menu">
+          <img src={menuIcon} alt="Menu Icon" />
         </div>
       </nav>
 
@@ -46,23 +49,23 @@ function Navbar() {
           <img src={closeIcon} alt='Close Icon' />
         </div>
         <ul className='menu-items'>
-          <li>
-            <a href='#topics' onClick={() => setIsActive(false)}>Disease Details</a>
+        <li>
+            <a href="#topics" onClick={(e) => handleNavLinkClick(e, 'topics')}>Disease Details</a>
           </li>
           <li>
-            <a href='#info' onClick={() => setIsActive(false)}>About Us</a>
+            <a href="#info" onClick={(e) => handleNavLinkClick(e, 'info')}>About Us</a>
           </li>
           <li>
-            <a href='#blog' onClick={() => setIsActive(false)}>Blog</a>
+            <a href="#blog" onClick={(e) => handleNavLinkClick(e, 'blog')}>Blog</a>
           </li>
           <li>
-            <a href='#prediction' onClick={() => setIsActive(false)}>Prediction</a>
+            <a href="#prediction" onClick={(e) => handleNavLinkClick(e, 'prediction')}>Prediction</a>
           </li>
           <li>
-            <a href='#testimonials' onClick={() => setIsActive(false)}>Testimonials</a>
+            <a href="#testimonials" onClick={(e) => handleNavLinkClick(e, 'testimonials')}>Testimonials</a>
           </li>
           <li>
-            <a href='/login' onClick={() => setIsActive(false)}>Login</a>
+            <NavLink to="/login" onClick={() => setIsActive(false)}>Login</NavLink>
           </li>
         </ul>
       </div>
@@ -70,4 +73,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
