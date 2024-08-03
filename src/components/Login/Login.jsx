@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
+import { loginPage } from '../../assets';
 
-function Login(){
+function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const handleLogin = async (e) =>{
+    const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
 
@@ -34,30 +36,40 @@ function Login(){
     };
 
     return (
-        <div className="login-container">
-            <h2>Login</h2>
-            {error && <p className="error">{error}</p>}
-            <form onSubmit={handleLogin}>
-                <label>
-                    Username:
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
-                <button type="submit">Login</button>
-            </form>
+        <div className="login-page">
+            <div className="login-left">
+                <img src={loginPage}/>
+            </div>
+            <div className="login-right">
+                <div className="login-container">
+                    <h2>Login</h2>
+                    {error && <p className="error">{error}</p>}
+                    <form onSubmit={handleLogin}>
+                        <label>
+                            Username:
+                            <input
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Password:
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p className="signup-link">
+                        Don't have an account? <Link to="/signup">Sign up</Link>
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }
