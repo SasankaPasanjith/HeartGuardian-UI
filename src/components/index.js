@@ -6,7 +6,8 @@ import Prediction from "./Prediction/Prediction";
 import Testimonials from "./Testimonials/Testimonials";
 import Footer from "./Footer/Footer";
 import Login from "./Login/Login";
+import SignUp from "./SignUp/SignUp";
 
 
 
-export { Header, Topics, Info, Blog, Prediction, Testimonials, Footer, Login};
+export { Header, Topics, Info, Blog, Prediction, Testimonials, Footer, Login, SignUp};

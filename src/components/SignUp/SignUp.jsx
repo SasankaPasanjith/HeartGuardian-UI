@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css';
+import { Link } from 'react-router-dom';
+import { signUp } from '../../assets';
 
 function SignUp() {
     const [firstname, setFirstname] = useState('');
@@ -55,82 +57,87 @@ function SignUp() {
     };
 
     return (
-        <div className='signup-container'>
-            <h2>Sign Up</h2>
-            {error && <p className='error'>{success}</p>}
-            <form onSubmit={handleSignUp}>
-                <label>
-                    First Name:
-                    <input
-                        type="text"
-                        value={firstname}
-                        onChange={(e) => setFirstname(e.target.value)}
-                        required
-                    />
-                </label>
-
-                <label>
-                    Last Name:
-                    <input
-                        type="text"
-                        value={lastname}
-                        onChange={(e) => setLastname(e.target.value)}
-                        required
-                    />
-                </label>
-
-                <label>
-          Username:
-          <input
-            type='text'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-
-        <label>
-          Email:
-          <input
-            type='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-
-        <label>
-          Mobile Number:
-          <input
-            type='text'
-            value={mobileNumber}
-            onChange={(e) => setMobileNumber(e.target.value)}
-            required
-          />
-        </label>
-
-        <label>
-          Password:
-          <input
-            type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-
-        <label>
-          Confirm Password:
-          <input
-            type='password'
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type='submit'>Sign Up</button>
-      </form>
-    </div>
+      <div className="signup-page">
+          <div className="signup-left">
+              <div className="signup-container">
+                  <h2>Sign Up</h2>
+                  {error && <p className="error">{error}</p>}
+                  {success && <p className="success">{success}</p>}
+                  <form onSubmit={handleSignUp}>
+                      <label>
+                          First Name:
+                          <input
+                              type="text"
+                              value={firstname}
+                              onChange={(e) => setFirstname(e.target.value)}
+                              required
+                          />
+                      </label>
+                      <label>
+                          Last Name:
+                          <input
+                              type="text"
+                              value={lastname}
+                              onChange={(e) => setLastname(e.target.value)}
+                              required
+                          />
+                      </label>
+                      <label>
+                          Username:
+                          <input
+                              type="text"
+                              value={username}
+                              onChange={(e) => setUsername(e.target.value)}
+                              required
+                          />
+                      </label>
+                      <label>
+                          Email:
+                          <input
+                              type="email"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                              required
+                          />
+                      </label>
+                      <label>
+                          Mobile Number:
+                          <input
+                              type="text"
+                              value={mobileNumber}
+                              onChange={(e) => setMobileNumber(e.target.value)}
+                              required
+                          />
+                      </label>
+                      <label>
+                          Password:
+                          <input
+                              type="password"
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
+                              required
+                          />
+                      </label>
+                      <label>
+                          Confirm Password:
+                          <input
+                              type="password"
+                              value={confirmPassword}
+                              onChange={(e) => setConfirmPassword(e.target.value)}
+                              required
+                          />
+                      </label>
+                      <button type="submit">Sign Up</button>
+                  </form>
+                  <p className="login-link">
+                      Already have an account? <Link to="/login">Log in</Link>
+                  </p>
+              </div>
+          </div>
+          <div className="signup-right">
+              <img src={signUp} alt="Signup Illustration"/>
+          </div>
+      </div>
   );
 }
 

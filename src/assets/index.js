@@ -21,6 +21,7 @@ import testimonial1 from "./testimonial1.jpg";
 import testimonial2 from "./testimonial2.jpg";
 import testimonial3 from "./testimonial3.jpg";
 import loginPage from "./login page.png";
+import signUp from "./SignUp page.png";
 
 export { 
     bgElement1,
@@ -45,5 +46,6 @@ export {
     testimonial1,
     testimonial2,
     testimonial3,
-    loginPage
+    loginPage,
+    signUp
 };
