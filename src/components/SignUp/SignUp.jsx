@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SignUp.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signUp } from '../../assets';
 
 function SignUp() {
@@ -11,6 +11,8 @@ function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+
+    const navigate = useNavigate(); //Usenavigate hook
 
     const handleSignUp = async (e) =>{
         e.preventDefault();
@@ -44,6 +46,10 @@ function SignUp() {
             setMobileNumber('');
             setPassword('');
             setConfirmPassword('');
+
+            setTimeout(() => {
+                navigate('/header'); // Redirect to the header section after a delay
+            }, 2000);
         } else {
             setError(data.error);
         }
