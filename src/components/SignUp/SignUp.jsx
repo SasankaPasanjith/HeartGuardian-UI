@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { signUp } from '../../assets';
 
 function SignUp() {
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
@@ -30,28 +28,23 @@ function SignUp() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                firstname,
-                lastname,
                 username,
                 email,
                 mobile_number: mobileNumber,
                 password,
-                confirm_Password: confirmPassword,
+                confirm_password: confirmPassword
             }),
         });
 
         const data = await response.json();
         if (response.ok) {
-            setSuccess('User successfully registered.'); 
-
-            setFirstname('');
-            setLastname('');
+            setSuccess('User successfully registered.');
             setUsername('');
             setEmail('');
             setMobileNumber('');
             setPassword('');
-            setConfirmPassword('');     //Clear the fields of form
-        } else{
+            setConfirmPassword('');
+        } else {
             setError(data.error);
         }
     };
@@ -64,24 +57,6 @@ function SignUp() {
                   {error && <p className="error">{error}</p>}
                   {success && <p className="success">{success}</p>}
                   <form onSubmit={handleSignUp}>
-                      <label>
-                          First Name:
-                          <input
-                              type="text"
-                              value={firstname}
-                              onChange={(e) => setFirstname(e.target.value)}
-                              required
-                          />
-                      </label>
-                      <label>
-                          Last Name:
-                          <input
-                              type="text"
-                              value={lastname}
-                              onChange={(e) => setLastname(e.target.value)}
-                              required
-                          />
-                      </label>
                       <label>
                           Username:
                           <input

@@ -4,7 +4,7 @@ import './Login.css';
 import { loginPage } from '../../assets';
 
 function Login() {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
@@ -18,15 +18,14 @@ function Login() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ email, password }),
             });
 
             const data = await response.json();
             if (response.ok) {
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('username', data.username);
                 localStorage.setItem('email', data.email);
-                window.location.href = '/header'; // Redirected to Header
+                window.location.href = '/header'; // Redirect to header
             } else {
                 setError(data.error || 'An error occurred');
             }
@@ -46,11 +45,11 @@ function Login() {
                     {error && <p className="error">{error}</p>}
                     <form onSubmit={handleLogin}>
                         <label>
-                            Username:
+                           Email:
                             <input
-                                type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
                         </label>
