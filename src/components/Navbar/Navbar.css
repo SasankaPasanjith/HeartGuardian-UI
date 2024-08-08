@@ -1,7 +1,7 @@
 nav {
     position: fixed;
     width: 100%;
-    max-width: 1024px;
+    max-width: 1100px;
     top: 24px;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
@@ -41,6 +41,18 @@ a.logo .red {
 nav ul li a:hover,
 .mobile-menu-container .menu-items li a:hover {
     color: #cc3e3e;
+}
+
+.navbar-username {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: default; 
+}
+
+.navbar-username:hover {
+    color: #cc3e3e; 
 }
 
 /* Tablet version */

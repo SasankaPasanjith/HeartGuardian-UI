@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
 import { menuIcon, closeIcon, logoImage} from '../../assets'
@@ -6,6 +6,14 @@ import { menuIcon, closeIcon, logoImage} from '../../assets'
 function Navbar() {
 
   const [isActive, setIsActive] = useState(false);
+  const [username, setUsername] = useState (null);
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
 
   const handleNavLinkClick = (e, targetId) => {
     e.preventDefault();
@@ -34,9 +42,13 @@ function Navbar() {
           </li>
           <li>
             <a href="#testimonials" onClick={(e) => handleNavLinkClick(e, 'testimonials')}>Testimonials</a>
-          </li>
+            </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            {username ? (
+              <span className='navbar-username'>Welcome {username}</span>
+            ) : (
+              <NavLink to="/login">Login</NavLink>
+            )}
           </li>
         </ul>
         <div onClick={() => setIsActive(true)} className="menu-icon" aria-label="Open menu">
@@ -65,7 +77,11 @@ function Navbar() {
             <a href="#testimonials" onClick={(e) => handleNavLinkClick(e, 'testimonials')}>Testimonials</a>
           </li>
           <li>
-            <NavLink to="/login" onClick={() => setIsActive(false)}>Login</NavLink>
+            {username ? (
+              <span className='navbar-username'>Welcome {username}</span>
+            ) : (
+              <NavLink to="/login" onClick={() => setIsActive(false)}>Login</NavLink>
+            )}
           </li>
         </ul>
       </div>

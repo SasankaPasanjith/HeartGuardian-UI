@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { loginPage } from '../../assets';
 
@@ -7,6 +7,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -24,8 +25,9 @@ function Login() {
             const data = await response.json();
             if (response.ok) {
                 localStorage.setItem('token', data.token);
+                localStorage.setItem('username', data.username);
                 localStorage.setItem('email', data.email);
-                window.location.href = '/header'; // Redirect to header
+                navigate('/'); // Redirect to header
             } else {
                 setError(data.error || 'An error occurred');
             }

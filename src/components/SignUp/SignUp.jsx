@@ -41,6 +41,8 @@ function SignUp() {
         const data = await response.json();
         if (response.ok) {
             setSuccess('User successfully registered.');
+            
+            localStorage.setItem('username', username);
             setUsername('');
             setEmail('');
             setMobileNumber('');
@@ -48,7 +50,7 @@ function SignUp() {
             setConfirmPassword('');
 
             setTimeout(() => {
-                navigate('/header'); // Redirect to the header section after a delay
+                navigate('/'); // Redirect to the header section after a delay
             }, 2000);
         } else {
             setError(data.error);
