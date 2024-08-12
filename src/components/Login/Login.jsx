@@ -25,9 +25,9 @@ function Login() {
             const data = await response.json();
             if (response.ok) {
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('username', data.username);
+                localStorage.setItem('username', data.username || 'User');
                 localStorage.setItem('email', data.email);
-                navigate('/'); // Redirect to header
+                navigate('/'); // Redirect to homepage
             } else {
                 setError(data.error || 'An error occurred');
             }
@@ -39,7 +39,7 @@ function Login() {
     return (
         <div className="login-page">
             <div className="login-left">
-                <img src={loginPage}/>
+                <img src={loginPage} alt="Login" />
             </div>
             <div className="login-right">
                 <div className="login-container">

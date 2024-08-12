@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
-import "./Navbar.css"
-import { menuIcon, closeIcon, logoImage} from '../../assets'
+import React, { useState, useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import './Navbar.css';
+import { menuIcon, closeIcon } from '../../assets';
 
 function Navbar() {
-
   const [isActive, setIsActive] = useState(false);
-  const [username, setUsername] = useState (null);
+  const [username, setUsername] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedUsername = localStorage.getItem('username');
@@ -23,10 +24,17 @@ function Navbar() {
     setIsActive(false);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('username');
+    localStorage.removeItem('token');
+    setUsername(null);
+    navigate('/');
+  };
+
   return (
     <>
       <nav>
-        <a href="/" className="logo"> Heart<span className="red">Guardian</span></a>
+        <a href="/" className="logo">Heart<span className="red">Guardian</span></a>
         <ul>
           <li>
             <a href="#topics" onClick={(e) => handleNavLinkClick(e, 'topics')}>Disease Details</a>
@@ -42,10 +50,22 @@ function Navbar() {
           </li>
           <li>
             <a href="#testimonials" onClick={(e) => handleNavLinkClick(e, 'testimonials')}>Testimonials</a>
-            </li>
-          <li>
+          </li>
+          <li className="navbar-username-dropdown">
             {username ? (
-              <span className='navbar-username'>Welcome {username}</span>
+              <>
+                <span
+                  className='navbar-username'
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                >
+                  Welcome {username}
+                </span>
+                {dropdownOpen && (
+                  <ul className='dropdown-menu'>
+                    <li onClick={handleLogout}>Logout</li>
+                  </ul>
+                )}
+              </>
             ) : (
               <NavLink to="/login">Login</NavLink>
             )}
@@ -56,12 +76,12 @@ function Navbar() {
         </div>
       </nav>
 
-      <div className={`mobile-menu-container ${isActive ? "active" : ""}`} >
+      <div className={`mobile-menu-container ${isActive ? 'active' : ''}`}>
         <div onClick={() => setIsActive(false)} className='close-icon' aria-label="Close menu">
           <img src={closeIcon} alt='Close Icon' />
         </div>
         <ul className='menu-items'>
-        <li>
+          <li>
             <a href="#topics" onClick={(e) => handleNavLinkClick(e, 'topics')}>Disease Details</a>
           </li>
           <li>
@@ -76,9 +96,21 @@ function Navbar() {
           <li>
             <a href="#testimonials" onClick={(e) => handleNavLinkClick(e, 'testimonials')}>Testimonials</a>
           </li>
-          <li>
+          <li className="navbar-username-dropdown">
             {username ? (
-              <span className='navbar-username'>Welcome {username}</span>
+              <>
+                <span
+                  className='navbar-username'
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                >
+                  Welcome {username}
+                </span>
+                {dropdownOpen && (
+                  <ul className='dropdown-menu'>
+                    <li onClick={handleLogout}>Logout</li>
+                  </ul>
+                )}
+              </>
             ) : (
               <NavLink to="/login" onClick={() => setIsActive(false)}>Login</NavLink>
             )}
