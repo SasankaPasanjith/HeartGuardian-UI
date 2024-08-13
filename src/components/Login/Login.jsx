@@ -24,9 +24,9 @@ function Login() {
 
             const data = await response.json();
             if (response.ok) {
-                localStorage.setItem('token', data.token);
-                localStorage.setItem('username', data.username || 'User');
-                localStorage.setItem('email', data.email);
+                localStorage.setItem('token', data.data.token);
+                localStorage.setItem('username', data.data.username || 'User');
+                localStorage.setItem('email', data.data.email);
                 navigate('/'); // Redirect to homepage
             } else {
                 setError(data.error || 'An error occurred');
