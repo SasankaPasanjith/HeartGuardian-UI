@@ -43,6 +43,9 @@ function SignUp() {
             setSuccess('User successfully registered.');
             
             localStorage.setItem('username', username);
+            localStorage.setItem('token', data.data.token);
+            localStorage.setItem('email', email);
+
             setUsername('');
             setEmail('');
             setMobileNumber('');
@@ -51,7 +54,7 @@ function SignUp() {
 
             setTimeout(() => {
                 navigate('/'); // Redirect to the header section after a delay
-            }, 2000);
+            }, 1000);
         } else {
             setError(data.error);
         }
