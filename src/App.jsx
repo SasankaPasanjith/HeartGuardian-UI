@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header, Info, Topics, Blog, Prediction, Testimonials, Footer } from './components';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import PastPredictions from './components/PastPredictions/PastPredictions';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/pastpredictions" element={<PastPredictions />} />
       </Routes>
     </Router>
   );

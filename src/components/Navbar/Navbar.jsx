@@ -62,6 +62,7 @@ function Navbar() {
                 </span>
                 {dropdownOpen && (
                   <ul className='dropdown-menu'>
+                    <li onClick={() => navigate('/PastPredictions')}>Past Predictions</li>
                     <li onClick={handleLogout}>Logout</li>
                   </ul>
                 )}
@@ -107,6 +108,7 @@ function Navbar() {
                 </span>
                 {dropdownOpen && (
                   <ul className='dropdown-menu'>
+                    <li onClick={() => navigate('/PastPredictions')}>Past Predictions</li>
                     <li onClick={handleLogout}>Logout</li>
                   </ul>
                 )}
