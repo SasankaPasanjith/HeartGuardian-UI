@@ -1,76 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './PastPredictions.css';
+import './PastPredictions.css'
 
 const PastPredictions = () => {
   const [predictions, setPredictions] = useState([]);
 
   useEffect(() => {
-    const fetchPredictions = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        console.log('Token:', token);
-        const response = await axios.get('http://localhost:5000/predictions', {
-          headers: {
-            'Authorization': `Bearer ${token}`,  // Ensure correct token format
+      const fetchPredictions = async () => {
+          try {
+              const token = localStorage.getItem('token');
+              console.log('Token:', token);
+              const response = await axios.get('http://localhost:5000/predictions', {
+                  headers: {
+                      'Authorization': `Bearer ${token}`,  // Ensure correct token format
+                  }
+              });
+              
+              const { data } = response.data; 
+              setPredictions(data.predictions || []); 
+          } catch (error) {
+              console.error('Error fetching predictions:', error);
+              setPredictions([]);
           }
-        });
-        
-        const { data } = response.data; 
-        setPredictions(data.predictions || []); 
-      } catch (error) {
-        console.error('Error fetching predictions:', error);
-        setPredictions([]);
-      }
-    };
+      };
 
-    fetchPredictions();
+      fetchPredictions();
   }, []);
-
+  
   return (
-    <div className="predictions-container">
-      <h2>Your Past Predictions</h2>
+    <div className="past-predictions-container">
+      <h2 className="title">Your Past Predictions</h2>
       {predictions.length > 0 ? (
-        <div className="predictions-list">
+        <div className="predictions-grid">
           {predictions.map((prediction, index) => (
             <div className="prediction-card" key={index}>
-              <div className="prediction-detail">
-                <span className="detail-title">Age:</span>
-                <span className="detail-value">{prediction.age}</span>
-              </div>
-              <div className="prediction-detail">
-                <span className="detail-title">Gender:</span>
-                <span className="detail-value">{prediction.sex}</span>
-              </div>
-              <div className="prediction-detail">
-                <span className="detail-title">Chest Pain Type:</span>
-                <span className="detail-value">{prediction.cp}</span>
-              </div>
-              <div className="prediction-detail">
-                <span className="detail-title">Resting Blood Pressure:</span>
-                <span className="detail-value">{prediction.trestbps}</span>
-              </div>
-              <div className="prediction-detail">
-                <span className="detail-title">Cholesterol:</span>
-                <span className="detail-value">{prediction.chol}</span>
-              </div>
-              <div className="prediction-detail">
-                <span className="detail-title">Fasting Blood Sugar 120 mg/dL:</span>
-                <span className="detail-value">{prediction.fbs}</span>
-              </div>
-              <div className="prediction-detail">
-                <span className="detail-title">Max Heart Rate:</span>
-                <span className="detail-value">{prediction.thalach}</span>
-              </div>
-              <div className="prediction-detail prediction-result">
-                <span className="detail-title">Prediction:</span>
-                <span className="detail-value">{prediction.prediction}</span>
-              </div>
+              <p><strong>Age:</strong> {prediction.age}</p>
+              <p><strong>Gender:</strong> {prediction.sex}</p>
+              <p><strong>Chest Pain Type:</strong> {prediction.cp}</p>
+              <p><strong>Resting Blood Pressure:</strong> {prediction.trestbps}</p>
+              <p><strong>Cholesterol:</strong> {prediction.chol}</p>
+              <p><strong>Fasting Blood Sugar 120 mg/dL:</strong> {prediction.fbs}</p>
+              <p><strong>Max Heart Rate:</strong> {prediction.thalach}</p>
+              <p><strong>Prediction:</strong> {prediction.prediction}</p>
             </div>
           ))}
         </div>
       ) : (
-        <p>No past predictions found.</p>
+        <p className="no-predictions">No past predictions found.</p>
       )}
     </div>
   );
