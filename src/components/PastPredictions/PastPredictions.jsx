@@ -11,12 +11,12 @@ const PastPredictions = () => {
         const token = localStorage.getItem('token');
         const response = await axios.get('http://localhost:5000/predictions', {
           headers: {
-            'Authorization': `Bearer ${token}`, 
-          }
+            'Authorization': `Bearer ${token}`,
+          },
         });
 
-        const { data } = response.data; 
-        setPredictions(data.predictions || []); 
+        const { data } = response.data;
+        setPredictions(data.predictions || []);
       } catch (error) {
         console.error('Error fetching predictions:', error);
         setPredictions([]);
@@ -25,15 +25,9 @@ const PastPredictions = () => {
 
     fetchPredictions();
   }, []);
-  
+
   const getPredictionResult = (value) => {
-    // Convert the value to a number
     const numericValue = Number(value);
-
-    // Log the numeric value for debugging purposes
-    console.log('Numeric Prediction value:', numericValue);
-
-    // Handle the cases based on the numeric value
     if (numericValue === 0) {
       return "You don't have heart disease risk";
     } else if (numericValue === 1) {
@@ -41,6 +35,29 @@ const PastPredictions = () => {
     } else {
       return "Unknown prediction result";
     }
+  };
+
+  const getGender = (value) => {
+    return value === 0 ? "Female" : "Male";
+  };
+
+  const getChestPainType = (value) => {
+    switch (value) {
+      case 0:
+        return "Atypical angina";
+      case 1:
+        return "Typical angina";
+      case 2:
+        return "Asymptomatic";
+      case 3:
+        return "Nonanginal pain";
+      default:
+        return "Unknown type";
+    }
+  };
+
+  const getFastingBloodSugar = (value) => {
+    return value === 0 ? "No" : "Yes";
   };
 
   return (
@@ -56,11 +73,11 @@ const PastPredictions = () => {
               </div>
               <div className="prediction-detail">
                 <span className="detail-title">Gender:</span>
-                <span className="detail-value">{prediction.sex}</span>
+                <span className="detail-value">{getGender(Number(prediction.sex))}</span>
               </div>
               <div className="prediction-detail">
                 <span className="detail-title">Chest Pain Type:</span>
-                <span className="detail-value">{prediction.cp}</span>
+                <span className="detail-value">{getChestPainType(Number(prediction.cp))}</span>
               </div>
               <div className="prediction-detail">
                 <span className="detail-title">Resting Blood Pressure:</span>
@@ -72,7 +89,7 @@ const PastPredictions = () => {
               </div>
               <div className="prediction-detail">
                 <span className="detail-title">Fasting Blood Sugar above 120 mg/dL:</span>
-                <span className="detail-value">{prediction.fbs}</span>
+                <span className="detail-value">{getFastingBloodSugar(Number(prediction.fbs))}</span>
               </div>
               <div className="prediction-detail">
                 <span className="detail-title">Max Heart Rate:</span>
