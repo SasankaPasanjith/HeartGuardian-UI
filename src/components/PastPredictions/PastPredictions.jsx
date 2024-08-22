@@ -29,11 +29,11 @@ const PastPredictions = () => {
   const getPredictionResult = (value) => {
     const numericValue = Number(value);
     if (numericValue === 0) {
-      return "You don't have heart disease risk";
+      return { text: "You don't have heart disease risk", className: 'no-risk' };
     } else if (numericValue === 1) {
-      return "You have heart disease risk";
+      return { text: "You have heart disease risk", className: 'high-risk' };
     } else {
-      return "Unknown prediction result";
+      return { text: "Unknown prediction result", className: '' };
     }
   };
 
@@ -95,8 +95,8 @@ const PastPredictions = () => {
                 <span className="detail-title">Max Heart Rate:</span>
                 <span className="detail-value">{prediction.thalach}</span>
               </div>
-              <div className="prediction-result">
-                {getPredictionResult(prediction.prediction)}
+              <div className={`prediction-result ${getPredictionResult(prediction.prediction).className}`}>
+                {getPredictionResult(prediction.prediction).text}
               </div>
             </div>
           ))}

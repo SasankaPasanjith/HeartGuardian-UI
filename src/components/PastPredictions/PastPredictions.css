@@ -62,7 +62,14 @@ h2 {
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #e74c3c;
+}
+
+.no-risk {
+  color: #2ecc71; /* Green color for no risk */
+}
+
+.high-risk {
+  color: #e74c3c; /* Red color for high risk */
 }
 
 .no-predictions {
