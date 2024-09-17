@@ -26,33 +26,49 @@ Currently, two official plugins are available:
 * After successful installation of all packages, start the server by typing `npm run dev`. This will start the development server at http://localhost This will install all necessary packages mentioned in package.
 * You will see a website opened in your browser.
 
-![Homepage](https://github.com/SasankaPasanjith/career-compass-website/blob/main/static/Header.PNG)
 
 *Homepage of the System*
+![Homepage](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/Homepage.PNG)
 
-![Info](https://github.com/SasankaPasanjith/career-compass-website/blob/main/static/Info.PNG)
+
+
+*Login Page*
+![Login](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/Login.PNG)
+
+
+
+*Signup Page*
+![Signup Page](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/Sign%20up.PNG)
+
+
+
+*Past Prediction Page*
+![Past Prediction Page](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/past%20pred.PNG)
+
+
+
+*User Menu*
+![User Menu](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/Login%20funct.PNG)
+
+
 
 *Info Section*
+![Info](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/Dynamic%20images.PNG)
 
-![Blog](https://github.com/SasankaPasanjith/career-compass-website/blob/main/static/Blogs.PNG)
+
 
 *Blog Section*
+![Blog](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/BLogs.PNG)
 
-![Prediction Form](https://github.com/SasankaPasanjith/career-compass-website/blob/main/static/Prediction%20form.PNG)
+
 
 *Heart Disease Prediction Form*
-
-![Positive HD](https://github.com/SasankaPasanjith/career-compass-website/blob/main/static/Positive%20HD.PNG)
-
-*Positive Heart Disease Prediction*
+![Prediction Form](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/Prediction%20form.PNG)
 
 
-![Negative HD](https://github.com/SasankaPasanjith/career-compass-website/blob/main/static/negative%20HD.PNG)
 
-*Negative  Heart Disease Prediction*
+*Footer & Testimonials*
+![Footer](https://github.com/SasankaPasanjith/HeartGuardian-UI/blob/main/src/assets/Frontend/Footer.PNG)
 
 
-![Testimonial](https://github.com/SasankaPasanjith/career-compass-website/blob/main/static/Testimonial%20%26%20footer.PNG)
-
-*Testimonial*
 
